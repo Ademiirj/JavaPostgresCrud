@@ -182,7 +182,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Consulta de Boletos"/>
+        <Property name="text" type="java.lang.String" value="Consulta de Pessoas"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
@@ -207,7 +207,6 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblUSU_NOME" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblUSU_LOGIN1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblUSU_LOGIN" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblUSU_LOGIN3" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -216,6 +215,7 @@
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Component id="lblUSU_LOGIN7" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="lblUSU_NOME" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -274,7 +274,10 @@
                                   <Component id="lblUSU_ID" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                              <Component id="txtNome" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblUSU_NOME" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="txtDocumento" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -294,29 +297,21 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      <Component id="lblUSU_NOME" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="txtRua" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblUSU_LOGIN4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtNumero" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblUSU_LOGIN5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtCidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblUSU_LOGIN6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cbEstado" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <Component id="txtRua" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblUSU_LOGIN4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblUSU_LOGIN5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblUSU_LOGIN6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbEstado" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -665,15 +660,17 @@
                               <Component id="txtCidade_consulta" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="16" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtNome_consulta" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblCONS_NOME" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblCONS_NOME1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtDocumento_consulta" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="lblUSU_LOGIN9" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="cbEstado_consulta" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtNome_consulta" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCONS_NOME" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCONS_NOME1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDocumento_consulta" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>

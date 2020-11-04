@@ -58,8 +58,6 @@ public class ReceberDao {
             sql += " where " + condicao;
         }
         
-        System.out.println(sql);
-        
         stm = conexao.prepareStatement(sql);
         rs = stm.executeQuery();
         lista = new ArrayList<>();

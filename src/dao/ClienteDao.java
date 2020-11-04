@@ -20,8 +20,6 @@ public class ClienteDao {
     }
 
     public void adicionar(ClienteModel cliente) throws SQLException {
-//        insert into cliente(cli_nome, cli_cpf,  cli_email, cli_ddd, cli_telefone, end_id) 
-// values ('Ademir Cliente', '40192383299', 'ademiirj@gmail.com', 14, 43211241,1);
         String sql = "insert into cliente(cli_nome, cli_cpf,  cli_email, cli_ddd, cli_telefone, end_id) "
                 + " VALUES ( ?, ?, ?, ?, ?, ?)";
 

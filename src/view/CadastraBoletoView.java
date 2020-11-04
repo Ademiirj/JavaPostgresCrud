@@ -320,6 +320,9 @@ public class CadastraBoletoView extends javax.swing.JFrame {
             ReceberModel receber = new ReceberModel();
 
             montaFinal();
+            if(valorFinal > 0){
+                
+            
             int numeroBoleto = Integer.parseInt(txtNumBoleto.getText());
             String notaFiscal = txtNotaFiscal.getText();
             Date dataEmissao = Date.valueOf(txtDataEmissao.getText());
@@ -345,7 +348,6 @@ public class CadastraBoletoView extends javax.swing.JFrame {
                 financeirocontroller.adicionar(financeiro);
                 fin_id = consulta.ultimaAdicao("fin_id", "financeiro");
 
-                System.out.println(fin_id);
                 if (despesa) {
                     pagar.setFinanceiroInfo(financeiro);
                     pagar.setFIN_ID(fin_id);
@@ -370,6 +372,9 @@ public class CadastraBoletoView extends javax.swing.JFrame {
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Não foi possivel cadastrar essa despesa, tente novamente mais tarde");
                 Logger.getLogger(CadastraBoletoView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+                JOptionPane.showMessageDialog(null, "Existem campos obrigatórios que não foram preenchidos");
             }
             
         }catch(IllegalArgumentException e){

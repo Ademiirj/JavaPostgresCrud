@@ -107,7 +107,7 @@ public class ConsultaFinanceiroView extends javax.swing.JFrame {
         btnConsulta = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
         lblCONS_NOME = new javax.swing.JLabel();
-        txtFornecedor_consulta = new javax.swing.JTextField();
+        txtNota_consulta = new javax.swing.JTextField();
         lblCONS_LOGIN = new javax.swing.JLabel();
         txtValor_consulta = new javax.swing.JTextField();
         lblCodigo3 = new javax.swing.JLabel();
@@ -384,9 +384,9 @@ public class ConsultaFinanceiroView extends javax.swing.JFrame {
         });
 
         lblCONS_NOME.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lblCONS_NOME.setText("Fornecedor");
+        lblCONS_NOME.setText("Nota Fiscal");
 
-        txtFornecedor_consulta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtNota_consulta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         lblCONS_LOGIN.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblCONS_LOGIN.setText("Valor");
@@ -413,7 +413,7 @@ public class ConsultaFinanceiroView extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(lblCONS_NOME)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtFornecedor_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNota_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(lblCONS_ID)
@@ -464,7 +464,7 @@ public class ConsultaFinanceiroView extends javax.swing.JFrame {
                         .addComponent(txtDocumento_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblCONS_NOME1))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtFornecedor_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNota_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblCONS_NOME)
                         .addComponent(btnLimpar)))
                 .addContainerGap())
@@ -491,7 +491,7 @@ public class ConsultaFinanceiroView extends javax.swing.JFrame {
             painelCONSULTALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelCONSULTALayout.createSequentialGroup()
                 .addGroup(painelCONSULTALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 688, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -630,6 +630,7 @@ public class ConsultaFinanceiroView extends javax.swing.JFrame {
     private void btnSAIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSAIRActionPerformed
 //        System.exit(0);
         dispose();
+        home.montaLayout();
         home.setVisible(true);
     }//GEN-LAST:event_btnSAIRActionPerformed
 
@@ -662,11 +663,11 @@ public class ConsultaFinanceiroView extends javax.swing.JFrame {
                     condicao = "(financeiro.FIN_TOTAL = " + txtValor_consulta.getText() + ")";
                 }
             }
-            if (!txtFornecedor_consulta.getText().trim().equals("")) {
+            if (!txtNota_consulta.getText().trim().equals("")) {
                 if (!condicao.isEmpty()) {
                     condicao += " AND ";
                 }
-                condicao += "(fornecedor.FOR_NOME = '" + txtFornecedor_consulta.getText().trim() + "')";
+                condicao += "(contas_pagar.nota_fiscal = '" + txtNota_consulta.getText().trim() + "')";
             }
             if (!txtDocumento_consulta.getText().trim().equals("")) {
                 if (!condicao.isEmpty()) {
@@ -697,11 +698,11 @@ public class ConsultaFinanceiroView extends javax.swing.JFrame {
                     condicao = "(financeiro.FIN_TOTAL = " + txtValor_consulta.getText() + ")";
                 }
             }
-            if (!txtFornecedor_consulta.getText().trim().equals("")) {
+            if (!txtNota_consulta.getText().trim().equals("")) {
                 if (!condicao.isEmpty()) {
                     condicao += " AND ";
                 }
-                condicao += "(cliente.CLI_NOME = '" + txtFornecedor_consulta.getText().trim() + "')";
+                condicao += "(contas_receber.nota_fiscal = '" + txtNota_consulta.getText().trim() + "')";
             }
             if (!txtDocumento_consulta.getText().trim().equals("")) {
                 if (!condicao.isEmpty()) {
@@ -734,7 +735,7 @@ public class ConsultaFinanceiroView extends javax.swing.JFrame {
         txtValorFinal_consulta.setText("");
         txtId_consulta.setText("");
         txtIdFinal_consulta.setText("");
-        txtFornecedor_consulta.setText("");
+        txtNota_consulta.setText("");
         txtDocumento_consulta.setText("");
         
         buscaFinanceiros("");
@@ -845,12 +846,12 @@ public class ConsultaFinanceiroView extends javax.swing.JFrame {
     private javax.swing.JTextField txtDocumento_consulta;
     private javax.swing.JTextField txtEmissao;
     private javax.swing.JTextField txtFornecedor;
-    private javax.swing.JTextField txtFornecedor_consulta;
     private javax.swing.JTextField txtIdFinal_consulta;
     private javax.swing.JTextField txtId_consulta;
     private javax.swing.JTextField txtJuros;
     private javax.swing.JTextField txtMulta;
     private javax.swing.JTextField txtNotaFiscal;
+    private javax.swing.JTextField txtNota_consulta;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtPagamento;
     private javax.swing.JTextField txtValor;

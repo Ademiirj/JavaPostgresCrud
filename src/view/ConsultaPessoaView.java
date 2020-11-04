@@ -162,7 +162,7 @@ public class ConsultaPessoaView extends javax.swing.JFrame {
         jToolBar1.add(btnSAIR);
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblTitulo.setText("Consulta de Boletos");
+        lblTitulo.setText("Consulta de Pessoas");
 
         lblUSU_ID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblUSU_ID.setText("Identificação");
@@ -229,14 +229,14 @@ public class ConsultaPessoaView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDADOSLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(painelDADOSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblUSU_NOME)
                     .addComponent(lblUSU_LOGIN1)
                     .addComponent(lblUSU_LOGIN)
                     .addComponent(lblUSU_LOGIN3)
                     .addComponent(lblUSU_ID)
                     .addGroup(painelDADOSLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(lblUSU_LOGIN7)))
+                        .addComponent(lblUSU_LOGIN7))
+                    .addComponent(lblUSU_NOME))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(painelDADOSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtId, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -282,7 +282,9 @@ public class ConsultaPessoaView extends javax.swing.JFrame {
                             .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblUSU_ID))
                         .addGap(11, 11, 11)
-                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(painelDADOSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblUSU_NOME))
                         .addGap(5, 5, 5)
                         .addGroup(painelDADOSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -298,24 +300,19 @@ public class ConsultaPessoaView extends javax.swing.JFrame {
                             .addComponent(lblUSU_LOGIN3)))
                     .addGroup(painelDADOSLayout.createSequentialGroup()
                         .addGap(57, 57, 57)
-                        .addGroup(painelDADOSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelDADOSLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(lblUSU_NOME))
-                            .addGroup(painelDADOSLayout.createSequentialGroup()
-                                .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(5, 5, 5)
-                                .addGroup(painelDADOSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblUSU_LOGIN4)
-                                    .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(6, 6, 6)
-                                .addGroup(painelDADOSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblUSU_LOGIN5)
-                                    .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(painelDADOSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblUSU_LOGIN6)
-                                    .addComponent(cbEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addGroup(painelDADOSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblUSU_LOGIN4)
+                            .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(painelDADOSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblUSU_LOGIN5)
+                            .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelDADOSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblUSU_LOGIN6)
+                            .addComponent(cbEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelDADOSLayout.createSequentialGroup()
                         .addGap(64, 64, 64)
                         .addComponent(lblUSU_NOME2)))
@@ -443,15 +440,16 @@ public class ConsultaPessoaView extends javax.swing.JFrame {
                     .addComponent(lblUSU_LOGIN10)
                     .addComponent(txtCidade_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNome_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCONS_NOME)
-                    .addComponent(lblCONS_NOME1)
-                    .addComponent(txtDocumento_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblUSU_LOGIN9)
                         .addComponent(cbEstado_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnLimpar)))
+                        .addComponent(btnLimpar))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtNome_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblCONS_NOME)
+                        .addComponent(lblCONS_NOME1)
+                        .addComponent(txtDocumento_consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -679,15 +677,16 @@ public class ConsultaPessoaView extends javax.swing.JFrame {
         if (fornecedor) {
             if (!txtId_consulta.getText().trim().equals("")) {
                 condicao += "(fornecedor.FOR_ID >= " + txtId_consulta.getText() + ")";
-            }
-            if (!txtIdFinal_consulta.getText().trim().equals("")) {
-                if (!condicao.isEmpty()) {
-                    condicao += " AND ";
+                if (!txtIdFinal_consulta.getText().trim().equals("")) {
+                    if (!condicao.isEmpty()) {
+                        condicao += " AND ";
+                    }
+                    condicao += "(fornecedor.FOR_ID <= " + txtIdFinal_consulta.getText() + ")";
+                } else {
+                    condicao = "(fornecedor.FOR_ID = " + txtId_consulta.getText() + ")";
                 }
-                condicao += "(fornecedor.FOR_ID <= " + txtIdFinal_consulta.getText() + ")";
-            }else{
-                condicao =  "(fornecedor.FOR_ID = " + txtId_consulta.getText() + ")";
             }
+
             if (!txtNome_consulta.getText().trim().equals("")) {
                 if (!condicao.isEmpty()) {
                     condicao += " AND ";
@@ -718,17 +717,17 @@ public class ConsultaPessoaView extends javax.swing.JFrame {
                 }
                 condicao += "(endereco.END_CIDADE = '" + txtCidade_consulta.getText().trim() + "')";
             }
-        }else{
+        } else {
             if (!txtId_consulta.getText().trim().equals("")) {
                 condicao += "(cliente.CLI_ID >= " + txtId_consulta.getText() + ")";
-            }
-            if (!txtIdFinal_consulta.getText().trim().equals("")) {
-                if (!condicao.isEmpty()) {
-                    condicao += " AND ";
+                if (!txtIdFinal_consulta.getText().trim().equals("")) {
+                    if (!condicao.isEmpty()) {
+                        condicao += " AND ";
+                    }
+                    condicao += "(cliente.CLI_ID <= " + txtIdFinal_consulta.getText() + ")";
+                } else {
+                    condicao = "(cliente.CLI_ID = " + txtId_consulta.getText() + ")";
                 }
-                condicao += "(cliente.CLI_ID <= " + txtIdFinal_consulta.getText() + ")";
-            }else{
-                condicao =  "(cliente.CLI_ID = " + txtId_consulta.getText() + ")";
             }
             if (!txtNome_consulta.getText().trim().equals("")) {
                 if (!condicao.isEmpty()) {
@@ -780,7 +779,7 @@ public class ConsultaPessoaView extends javax.swing.JFrame {
         txtCep.setText("");
         cbEstado.setSelectedItem("AC");
         txtRazaoSocial.setText("");
-        
+
         txtId_consulta.setText("");
         txtIdFinal_consulta.setText("");
         txtNome_consulta.setText("");
@@ -788,7 +787,7 @@ public class ConsultaPessoaView extends javax.swing.JFrame {
         txtDocumento_consulta.setText("");
         txtCidade_consulta.setText("");
         cbEstado_consulta.setSelectedItem("Selecionar");
-        
+
         buscaPessoas("");
     }//GEN-LAST:event_btnLimparActionPerformed
 

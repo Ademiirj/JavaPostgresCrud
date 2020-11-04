@@ -336,23 +336,23 @@ public class HomeView extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu15MouseClicked
 
     private void jMenu17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu17MouseClicked
-        new ConsultaPessoaView(false,this);
+        new ConsultaPessoaView(false, this);
         setVisible(false);
     }//GEN-LAST:event_jMenu17MouseClicked
 
     private void jMenu18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu18MouseClicked
-        new ConsultaPessoaView(true,this);
+        new ConsultaPessoaView(true, this);
         setVisible(false);
     }//GEN-LAST:event_jMenu18MouseClicked
 
     private void tblReceberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblReceberMouseClicked
-       ReceberModel objreceber = listaReceber.get(tblReceber.getSelectedRow());
-       new FinanceiroInformacoesView(objreceber);
+        ReceberModel objreceber = listaReceber.get(tblReceber.getSelectedRow());
+        new FinanceiroInformacoesView(objreceber);
     }//GEN-LAST:event_tblReceberMouseClicked
 
     private void tblPagarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPagarMouseClicked
         PagarModel objpagar = listaPagar.get(tblPagar.getSelectedRow());
-       new FinanceiroInformacoesView(objpagar);
+        new FinanceiroInformacoesView(objpagar);
     }//GEN-LAST:event_tblPagarMouseClicked
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -404,11 +404,12 @@ public class HomeView extends javax.swing.JFrame {
             String apenasVencimentoDesteMes = "financeiro.fin_vencimento > (current_date-31)";
             listaReceber = recebercontroller.consultar(apenasVencimentoDesteMes);
             if (listaReceber.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Não Existem Usuários Cadastrados !");
+                JOptionPane.showMessageDialog(null, "Não Existem boletos para receber Cadastrados !");
             } else {
                 txtValorReceber.setText("R$ "
                         + consultasComplexas.pagar_Soma(
-                                "select sum(fin_total) from financeiro where fin_id in (select fin_id from contas_receber) and fin_vencimento > (current_date-31);"));
+                                "select sum(fin_total) from financeiro where fin_id in (select fin_id from contas_receber) and fin_vencimento > (current_date-31) and fin_pagamento is null;")
+                        + " pendente");
                 txtNumReceber.setText(listaReceber.size() + " boletos");
                 tabelaReceber = new HomeReceberTableModel(listaReceber, colunasReceber);
                 tblReceber.setModel(tabelaReceber);
@@ -424,11 +425,12 @@ public class HomeView extends javax.swing.JFrame {
             String apenasVencimentoDesteMes = "financeiro.fin_vencimento > (current_date-31)";
             listaPagar = pagarcontroller.consultar(apenasVencimentoDesteMes);
             if (listaPagar.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Não Existem Usuários Cadastrados !");
+                JOptionPane.showMessageDialog(null, "Não Existem boletos para pagar Cadastrados !");
             } else {
                 txtValorPagar.setText("R$ "
                         + consultasComplexas.pagar_Soma(
-                                "select sum(fin_total) from financeiro where fin_id in (select fin_id from contas_pagar) and fin_vencimento > (current_date-31);"));
+                                "select sum(fin_total) from financeiro where fin_id in (select fin_id from contas_pagar) and fin_vencimento > (current_date-31) and fin_pagamento is null;")
+                        + " pendente");
                 txtNumPagar.setText(listaPagar.size() + " boletos");
                 tabelaPagar = new HomePagarTableModel(listaPagar, colunasPagar);
                 tblPagar.setModel(tabelaPagar);

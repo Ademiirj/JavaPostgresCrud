@@ -181,6 +181,8 @@ public class CadastraUsuarioView extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Erro na Gravação do Usuário, tente mais tarde \n" + ex.getMessage());
             }
         }
+        dispose();
+        LoginView login = new LoginView();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**

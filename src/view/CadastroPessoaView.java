@@ -310,6 +310,7 @@ public class CadastroPessoaView extends javax.swing.JFrame {
          if(cadastroView){
             janelaCadastro.setVisible(true);
         }else{
+             
             janelaHome.setVisible(true);
         }
         dispose();
